@@ -27,3 +27,8 @@ Once installed, you must run `git init` in your Git projects to (re)initialize y
 ```
 
 **Note**: you can disable this hook per commit by using `--no-verify`. Which is not recommended.
+
+## IDE Plugins
+
+- [JetBrains Conventional Commit](https://plugins.jetbrains.com/plugin/13389-conventional-commit)
+- [VS Code Conventional Commit](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
