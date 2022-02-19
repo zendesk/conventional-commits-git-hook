@@ -2,10 +2,6 @@
 
 This tool helps you follow the [Conventional Commits](https://www.conventionalcommits.org) conventional by installing a configurable `commit-msg` into your Git projects.
 
-### Prerequisites
-
-You must have [jq](https://stedolan.github.io/jq/download/) installed.
-
 ### Installing
 
 ```sh
