@@ -9,7 +9,7 @@ You must have [jq](https://stedolan.github.io/jq/download/) installed.
 ### Installing
 
 ```sh
-curl -o- https://raw.githubusercontent.com/tapsellorg/conventional-commits-git-hook/master/sailr.sh | bash
+curl -o- https://raw.githubusercontent.com/tapsellorg/conventional-commits-git-hook/master/scripts/install.sh | bash
 ```
 
 ### Uninstalling
