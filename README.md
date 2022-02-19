@@ -22,25 +22,12 @@ rm <your-project>/.git/hooks/commit-msg
 
 ## Usage <a name = "usage"></a>
 
-Once installed, you must run `git init` in your Git projects to (re)initialize your repository. The hook will look for a configuration file in the root of your Git project.
+Once installed, you must run `git init` in your Git projects to (re)initialize your repository.
 
-`conventional-commits.json`
+**Supported types:**
 
 ```json
-{
-    "types": [
-        "build",
-        "ci",
-        "docs",
-        "feat",
-        "fix",
-        "perf",
-        "refactor",
-        "style",
-        "test",
-        "chore"
-    ]
-}
+["build", "ci", "docs", "feat", "fix", "perf", "refactor", "style", "test", "chore"]
 ```
 
 **Note**: you can disable this hook per commit by using `--no-verify`. Which is not recommended.

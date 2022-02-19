@@ -1,26 +1,25 @@
 #!/bin/bash
 
-config_file_name="conventional-commits.json"
+#config_file_name="conventional-commits.json"
 
 # checks that jq is usable
-function check_jq_exists_and_executable {
-if ! [ -x "$(command -v jq)" ]; then
-  echo -e "\`commit-msg\` hook failed. Please install jq."
-  exit 1
-fi
-}
-
-function set_config {
-  local_config="$PWD/$config_file_name"
-
-  if [ -f "$local_config" ]; then
-    CONFIG=$local_config
-  fi
-}
+#function check_jq_exists_and_executable {
+#if ! [ -x "$(command -v jq)" ]; then
+#  echo -e "\`commit-msg\` hook failed. Please install jq."
+#  exit 1
+#fi
+#}
 
 # set values from config file to variables
 function set_config_values() {
-  types=($(jq -r '.types[]' "$CONFIG"))
+#  local_config="$PWD/$config_file_name"
+#
+#  if [ -f "$local_config" ]; then
+#    CONFIG=$local_config
+#    types=($(jq -r '.types[]' "$CONFIG"))
+#  else
+    types=('build ci docs feat fix perf refactor style test chore')
+#  fi
 }
 
 # build the regex pattern based on the config file
@@ -53,10 +52,8 @@ function print_error() {
   echo -e "\e[37mActual length: \e[33m$(echo $commit_message | wc -c)\033[0m\n"
 }
 
-set_config
-
 # make sure jq is installed
-check_jq_exists_and_executable
+#check_jq_exists_and_executable
 
 # get the first line of the commit message
 INPUT_FILE=$1
