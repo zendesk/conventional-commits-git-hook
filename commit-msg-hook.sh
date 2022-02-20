@@ -38,30 +38,25 @@ function build_regex() {
   regexp="${regexp%|})(\(.+\))?: "
 }
 
+# get the first line of the commit message
+INPUT_FILE=$1
+commit_message=`head -n1 $INPUT_FILE`
 
 # Print out a standard error message which explains
 # how the commit message should be structured
 function print_error() {
-  commit_message=$1
   regular_expression=$2
   echo -e "\n\e[31m[Invalid Commit Message]"
   echo -e "------------------------\033[0m\e[0m"
   echo -e "Valid types: \e[36m${types[@]}\033[0m"
-  echo -e "\e[37mRegex: \e[33m$regular_expression\033[0m"
   echo -e "\e[37mActual commit message: \e[33m\"$commit_message\"\033[0m"
-  echo -e "\e[37mActual length: \e[33m$(echo $commit_message | wc -c)\033[0m\n"
+  echo -e "\e[37mExample valid commit message: \e[36mfix(subject): message\033[0m"
+  echo -e "\e[37mRegex: \e[33m$regexp\033[0m"
 }
-
-# make sure jq is installed
-#check_jq_exists_and_executable
-
-# get the first line of the commit message
-INPUT_FILE=$1
-START_LINE=`head -n1 $INPUT_FILE`
 
 build_regex
 
-if [[ ! $START_LINE =~ $regexp ]]; then
+if [[ ! $commit_message =~ $regexp ]]; then
   # commit message is invalid according to config - block commit
   print_error
   exit 1
