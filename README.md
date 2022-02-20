@@ -5,7 +5,7 @@ This tool helps you follow the [Conventional Commits](https://www.conventionalco
 ### Installing
 
 ```sh
-curl -o- https://raw.githubusercontent.com/tapsellorg/conventional-commits-git-hook/master/scripts/install.sh | bash
+curl -o- https://raw.githubusercontent.com/tapsellorg/conventional-commits-git-hook/master/scripts/install.sh | sh
 ```
 
 ### Uninstalling

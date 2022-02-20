@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #config_file_name="conventional-commits.json"
 
