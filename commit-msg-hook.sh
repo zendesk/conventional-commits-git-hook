@@ -18,7 +18,7 @@ function set_config_values() {
 #    CONFIG=$local_config
 #    types=($(jq -r '.types[]' "$CONFIG"))
 #  else
-    types=('build ci docs feat fix perf refactor style test chore')
+    types=('build' 'ci' 'docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore')
 #  fi
 }
 
@@ -28,7 +28,7 @@ function build_regex() {
 
   regexp="^[.0-9]+$|"
 
-  regexp="${regexp}^([Rr]evert|[Mm]erge):? )?.*$|^("
+  regexp="${regexp}^([Rr]evert|[Mm]erge):? .*$|^("
 
   for type in "${types[@]}"
   do
@@ -50,8 +50,8 @@ function print_error() {
   echo -e "------------------------\033[0m\e[0m"
   echo -e "Valid types: \e[36m${types[@]}\033[0m"
   echo -e "\e[37mActual commit message: \e[33m\"$commit_message\"\033[0m"
-  echo -e "\e[37mExample valid commit message: \e[36mfix(subject): message\033[0m"
-  echo -e "\e[37mRegex: \e[33m$regexp\033[0m"
+  echo -e "\e[37mExample valid commit message: \e[36m\"fix(subject): message\"\033[0m"
+  echo -e "\e[37mRegex: \e[33m\"$regexp\"\033[0m"
 }
 
 build_regex
