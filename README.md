@@ -8,6 +8,8 @@ This tool helps you follow the [Conventional Commits](https://www.conventionalco
 curl -o- https://raw.githubusercontent.com/tapsellorg/conventional-commits-git-hook/master/scripts/install.sh | sh
 ```
 
+In Windows, you can run this command in a "Git Bash" terminal. 
+
 ### Uninstalling
 
 Remove the `commit-msg` Git hook from your project:
