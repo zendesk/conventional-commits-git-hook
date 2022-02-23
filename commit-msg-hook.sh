@@ -18,7 +18,7 @@ function set_config_values() {
 #    CONFIG=$local_config
 #    types=($(jq -r '.types[]' "$CONFIG"))
 #  else
-    types=('build' 'ci' 'docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore')
+    types=('build' 'docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore')
 #  fi
 }
 
