@@ -12,7 +12,7 @@ init() {
     curl $script_file -o "${destination}/commit-msg";
     chmod u+x "${destination}/commit-msg";
 
-    printf "\nInstalled \e[33mcommit-msg\033[0m hook in \e[32m%s\033[0m." "$destination";
+    printf "\nInstalled \e[33mcommit-msg\033[0m hook in \e[32m%s\033[0m.\n" "$destination";
     echo "More about Conventional Commits: https://www.conventionalcommits.org/";
 }
 
