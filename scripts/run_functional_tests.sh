@@ -2,10 +2,8 @@
 
 COMMIT_MSG_SCRIPT=$1
 
-# build ci docs feat fix perf refactor style test chore
-allowed_commit_messages=("build: change build details" \
-	"ci: make continuous integration change" \
-    "docs: updates some documentation" \
+# docs feat fix perf refactor style test chore
+allowed_commit_messages=("docs: updates some documentation" \
 	"feat: implements a new feature" \
 	"fix: correct typo in function" \
 	"perf: improve perf" \

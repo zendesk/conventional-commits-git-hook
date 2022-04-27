@@ -1,25 +1,8 @@
-#!/bin/sh
-
-#config_file_name="conventional-commits.json"
-
-# checks that jq is usable
-#function check_jq_exists_and_executable {
-#if ! [ -x "$(command -v jq)" ]; then
-#  echo -e "\`commit-msg\` hook failed. Please install jq."
-#  exit 1
-#fi
-#}
+#!/bin/bash
 
 # set values from config file to variables
 function set_config_values() {
-#  local_config="$PWD/$config_file_name"
-#
-#  if [ -f "$local_config" ]; then
-#    CONFIG=$local_config
-#    types=($(jq -r '.types[]' "$CONFIG"))
-#  else
-    types=('build' 'docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore')
-#  fi
+    types=('docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore')
 }
 
 # build the regex pattern based on the config file

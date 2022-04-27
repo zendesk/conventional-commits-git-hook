@@ -4,8 +4,8 @@ This tool helps you follow the [Conventional Commits](https://www.conventionalco
 
 ### Installing
 
-```sh
-curl -o- https://raw.githubusercontent.com/tapsellorg/conventional-commits-git-hook/master/scripts/install.sh | sh
+```bash
+curl -o- https://raw.githubusercontent.com/cytomine/conventional-commits-git-hook/master/scripts/install.sh | bash
 ```
 
 In Windows, you can run this command in a "Git Bash" terminal. 
@@ -25,7 +25,7 @@ Once installed, you must run `git init` in your Git projects to (re)initialize y
 **Supported types:**
 
 ```json
-["build", "docs", "feat", "fix", "perf", "refactor", "style", "test", "chore"]
+["docs", "feat", "fix", "perf", "refactor", "style", "test", "chore"]
 ```
 
 **Note**: you can disable this hook per commit by using `--no-verify`. Which is not recommended.
