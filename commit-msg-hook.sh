@@ -2,7 +2,7 @@
 
 # set values from config file to variables
 function set_config_values() {
-    types=('docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore')
+    types=('docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore' 'build' 'ci' 'revert' 'merge')
 }
 
 # build the regex pattern based on the config file
@@ -10,8 +10,6 @@ function build_regex() {
   set_config_values
 
   regexp="^[.0-9]+$|"
-
-  regexp="${regexp}^([Rr]evert|[Mm]erge):? .*$|^("
 
   for type in "${types[@]}"
   do
@@ -29,12 +27,12 @@ commit_message=`head -n1 $INPUT_FILE`
 # how the commit message should be structured
 function print_error() {
   regular_expression=$2
-  echo -e "\n\e[31m[Invalid Commit Message]"
-  echo -e "------------------------\033[0m\e[0m"
-  echo -e "Valid types: \e[36m${types[@]}\033[0m"
-  echo -e "\e[37mActual commit message: \e[33m\"$commit_message\"\033[0m"
-  echo -e "\e[37mExample valid commit message: \e[36m\"fix(subject): message\"\033[0m"
-  echo -e "\e[37mRegex: \e[33m\"$regexp\"\033[0m"
+  echo -e "\n\x1B[31m[Invalid Commit Message]"
+  echo -e "------------------------\033[0m\x1B[0m"
+  echo -e "Valid types: \x1B[36m${types[@]}\033[0m"
+  echo -e "\x1B[37mActual commit message: \x1B[33m\"$commit_message\"\033[0m"
+  echo -e "\x1B[37mExample valid commit message: \x1B[36m\"fix(subject): message\"\033[0m"
+  echo -e "\x1B[37mRegex: \x1B[33m\"$regexp\"\033[0m"
 }
 
 build_regex
