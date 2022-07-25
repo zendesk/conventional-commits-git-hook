@@ -1,10 +1,9 @@
 
 .PHONY: install
 install:
-	git config --global init.templatedir '~/.git-templates'
+	git config --global core.hooksPath '~/.git-templates/hooks'
 	mkdir -p ~/.git-templates/hooks
 	ln -sf $$PWD/commit-msg-hook.sh $$HOME/.git-templates/hooks/commit-msg
-	mkdir -p $$HOME/.sailr
 
 .PHONY: uninstall
 uninstall:

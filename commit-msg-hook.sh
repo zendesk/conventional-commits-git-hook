@@ -2,14 +2,14 @@
 
 # set values from config file to variables
 function set_config_values() {
-    types=('docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore' 'build' 'ci' 'revert' 'merge')
+    types=('docs' 'feat' 'fix' 'perf' 'refactor' 'style' 'test' 'chore' 'build' 'ci' 'revert' 'dataset')
 }
 
 # build the regex pattern based on the config file
 function build_regex() {
   set_config_values
 
-  regexp="^[.0-9]+$|"
+  regexp="^[.0-9]+$|("
 
   for type in "${types[@]}"
   do

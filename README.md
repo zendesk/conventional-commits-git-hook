@@ -4,28 +4,22 @@ This tool helps you follow the [Conventional Commits](https://www.conventionalco
 
 ### Installing
 
-```bash
-curl -o- https://raw.githubusercontent.com/holmeso/conventional-commits-git-hook/master/scripts/install.sh | bash
-```
+* clone this repository
+* In this repository folder, execute `make install`
+* done! 🎉 
 
-In Windows, you can run this command in a "Git Bash" terminal. 
 
 ### Uninstalling
 
-Remove the `commit-msg` Git hook from your project:
+* In this repository folder, execute `make uninstall`
 
-```sh
-rm <your-project>/.git/hooks/commit-msg
-```
+## Usage 
 
-## Usage <a name = "usage"></a>
-
-Once installed, you must run `git init` in your Git projects to (re)initialize your repository.
 
 **Supported types:**
 
 ```json
-["docs", "feat", "fix", "perf", "refactor", "style", "test", "chore", "build", "ci", "revert", "merge"]
+["docs", "feat", "fix", "perf", "refactor", "style", "test", "chore", "build", "ci", "revert", "dataset"]
 ```
 
 **Note**: you can disable this hook per commit by using `--no-verify`. Which is not recommended.
